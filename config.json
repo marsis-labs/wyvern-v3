@@ -31,6 +31,14 @@
       "StaticMarket": "0xa86AF1A5bB8AF2418500AAbdacB9B7d2217F91A5",
       "WyvernRegistry": "0x23d0a64aF6987A2d536B9c3bA72FAAf66c9D73b6",
       "WyvernExchange": "0xDBA99cE125C6140dC4b30D48cBdDc57Bc67dc2d1"
+    },
+    "development": {
+      "Migrations": "0x1B867b2E3A146F038586Ac20Fd3Ec45af77e49e9",
+      "WyvernAtomicizer": "0xCF28E734D7aAc04a2c9E9a734D31bc5d5C783D07",
+      "WyvernStatic": "0x7F95F47fFc64a39059ed4D5e5E7a80EC4CD77aAc",
+      "StaticMarket": "0xB6d86a1dcDeAD38B89B390800aD6681319fd00Ee",
+      "WyvernRegistry": "0xA34Fa03a9d87085F65aF2e724Ac42e5c895eDdd1",
+      "WyvernExchange": "0x2fB26F8Ea53975D67340a600cb92A055d1c5e597"
     }
   }
 }

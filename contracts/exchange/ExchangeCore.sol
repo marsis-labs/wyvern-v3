@@ -14,6 +14,9 @@ import "../lib/EIP712.sol";
 import "../lib/EIP1271.sol";
 import "../registry/ProxyRegistryInterface.sol";
 import "../registry/AuthenticatedProxy.sol";
+import "hardhat/console.sol";
+
+
 
 /**
  * @title ExchangeCore
@@ -306,6 +309,7 @@ contract ExchangeCore is ReentrancyGuarded, StaticCaller, EIP712 {
         reentrancyGuard
     {
         /* CHECKS */
+        console.log("[ExchangeCore -in ] atomicMatch -- 1-CHECKS");
 
         /* Calculate first order hash. */
         bytes32 firstHash = hashOrder(firstOrder);
@@ -334,6 +338,7 @@ contract ExchangeCore is ReentrancyGuarded, StaticCaller, EIP712 {
         }
 
         /* INTERACTIONS */
+        console.log("[ExchangeCore -in ] atomicMatch -- 2-INTERACTIONS");
 
         /* Transfer any msg.value.
            This is the first "asymmetric" part of order matching: if an order requires Ether, it must be the first order. */
@@ -363,6 +368,7 @@ contract ExchangeCore is ReentrancyGuarded, StaticCaller, EIP712 {
         uint secondFill = executeStaticCall(secondOrder, secondCall, firstOrder, firstCall, msg.sender, uint(0), previousSecondFill);
 
         /* EFFECTS */
+        console.log("[ExchangeCore -in ] atomicMatch -- 3-EFFECTS");
 
         /* Update first order fill, if necessary. */
         if (firstOrder.maker != msg.sender) {
@@ -379,6 +385,7 @@ contract ExchangeCore is ReentrancyGuarded, StaticCaller, EIP712 {
         }
 
         /* LOGS */
+        console.log("[ExchangeCore -in ] atomicMatch -- 4-LOGS");
 
         /* Log match event. */
         emit OrdersMatched(firstHash, secondHash, firstOrder.maker, secondOrder.maker, firstFill, secondFill, metadata);

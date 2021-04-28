@@ -20,7 +20,7 @@ contract TestERC1155 is ERC1155("http://test/{id}.json") {
 		return true;
 	}
 
-	function mint(address to, uint256 tokenId, uint256 amount) public returns (bool) {
+	function mints(address to, uint256 tokenId, uint256 amount) public returns (bool) {
 		_mint(to, tokenId, amount, "");
 		return true;
 	}
